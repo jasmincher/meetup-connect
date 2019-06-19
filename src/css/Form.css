@@ -1,12 +1,52 @@
 .form{
     width: 300px;
     margin: 30px auto 30px auto;
+}
 
+input{
+    border: none !important;
+    border-radius: 0 !important;
+    outline: none;
+    border-bottom: 2px rgb(131, 130, 130) solid !important;
+}
+
+input:hover{
+    background-color: rgba(0, 0, 0, 0.040);
+}
+
+input:focus, input.form-control:focus{
+    border-bottom: 2px rgb(197, 91, 165) solid !important;
+    box-shadow: none;
+}
+
+
+/* input:focus::placeholder{
+    transform: translateY(-20px) translateX(-50px) scale(.6);
+} */
+
+
+
+/* label input:focus{
+    transform: translateY(-20px) translateX(-50px) scale(.6);
+
+}  */
+
+
+label{
+  opacity: 0;
+}
+
+
+input:focus + label{
+   opacity: 1;
+   transform: translateY(-60px) scale(0.75);
 }
 
 .btn{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(187, 113, 165);
 }
+
 

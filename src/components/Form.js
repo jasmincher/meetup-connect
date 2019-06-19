@@ -10,35 +10,35 @@ const Form = () => (
 
 
             <div className="form-group">
-                <label for="input1">First Name</label>
                 <input type="text" className="form-control" id="input1" placeholder="Enter First Name" />
+                <label for="input1">First Name</label>
             </div>
 
 
             <div className="form-group">
-                <label for="input2">Last Name</label>
                 <input type="text" className="form-control" id="input2" placeholder="Enter Last Name" />
+                <label for="input2">Last Name</label>
             </div>
 
 
             <div className="form-group">
-                <label for="input3">Email</label>
                 <input type="email" className="form-control" id="input3" placeholder="Enter Email" />
+                <label for="input3">Email</label>
             </div>
 
             <div className="form-group">
-                <label for="input4">City</label>
                 <input type="text" className="form-control" id="input4" placeholder="Enter City" />
+                <label for="input4">City</label>
             </div>
 
             <div className="form-group">
-                <label for="input4">Interest</label>
                 <input type="text" className="form-control" id="input4" placeholder="Enter Interest" />
+                <label for="input4">Interest</label>
             </div>
 
             <div className="button">
                 <Link to="/Results">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-dark">Submit</button>
                 </Link>
             </div>
 

@@ -9,7 +9,7 @@ const Header = () => (
     <div className="header" style={{backgroundImage: "url(" + tech + ")" }}>
         <div className="header-overlay">
             <Link to="/" style={{textDecoration: 'none'}}>
-                <h1 className="header-title">Meetup Connect</h1>
+                <p className="header-title">Meetup Connect</p>
             </Link>
         </div>
     </div>

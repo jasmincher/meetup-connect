@@ -19,7 +19,7 @@ const Results = () => (
       <div className="button">
 
       <Link to="/Connect">
-        <button className="btn btn-primary">Lets Go</button>
+        <button className="btn btn-dark">Lets Go</button>
       </Link>
       </div>
     

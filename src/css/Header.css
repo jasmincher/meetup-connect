@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap');
+
+
 
 .header{
     height: 250px;
@@ -15,5 +18,8 @@
 }
 
 .header-title{
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 70px;
     color: white;
+
 }

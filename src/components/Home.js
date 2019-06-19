@@ -12,7 +12,7 @@ const Home = () => (
 
         <div className="button">
             <Link to="/Form">
-                <button className="btn btn-primary">Lets Go</button>
+                <button className="btn btn-dark">Lets Go</button>
             </Link>
 
         </div>
