@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/ConnectCard.css';
 
+
 function ConnectCard(props) {
     return (
         <div className="connect-card">
