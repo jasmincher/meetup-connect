@@ -26,12 +26,12 @@ input:focus, input.form-control:focus{
 
 input:focus::placeholder{
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 label{
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 
