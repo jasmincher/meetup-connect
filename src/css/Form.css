@@ -3,6 +3,10 @@
     margin: 30px auto 30px auto;
 }
 
+.form-group{
+    height: 50px !important;
+}
+
 input{
     border: none !important;
     border-radius: 0 !important;
@@ -20,26 +24,20 @@ input:focus, input.form-control:focus{
 }
 
 
-/* input:focus::placeholder{
-    transform: translateY(-20px) translateX(-50px) scale(.6);
-} */
-
-
-
-/* label input:focus{
-    transform: translateY(-20px) translateX(-50px) scale(.6);
-
-}  */
-
+input:focus::placeholder{
+    opacity: 0;
+    transition: 0.5s;
+}
 
 label{
   opacity: 0;
+  transition: 0.5s;
 }
 
 
 input:focus + label{
    opacity: 1;
-   transform: translateY(-60px) scale(0.75);
+   transform: translateY(-60px) scale(0.70);
 }
 
 .btn{
