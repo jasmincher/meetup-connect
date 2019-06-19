@@ -32,12 +32,16 @@ const Form = () => (
                 <input type="text" className="form-control" id="input4" placeholder="Enter City" />
             </div>
 
-
-
-
-     <Link to="/Results">
-     <button type="submit" className="btn btn-primary">Submit</button>
-     </Link>       
+            <div className="form-group">
+                <label for="input4">Interest</label>
+                <input type="text" className="form-control" id="input4" placeholder="Enter Interest" />
+            </div>
+            
+            <div className="button">
+                <Link to="/Results">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </Link>
+            </div>
 
         </form>
     </div>

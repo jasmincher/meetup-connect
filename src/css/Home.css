@@ -1,9 +1,16 @@
-
 .home{
-    height: 300px;
+    margin : 100px;
+    }
+
+.heading{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px auto 30px auto;
    
 }
 
+.button{
+    display: flex;
+    justify-content: center;
+}
