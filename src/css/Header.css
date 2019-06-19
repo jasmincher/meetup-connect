@@ -1,6 +1,6 @@
 
 .header{
-    background-image: url('/images/women-in-tech.jpg');
+    background-image: url('%PUBLIC_URL%/images/women-in-tech.jpg');
     height: 250px;
     background-position: 0 35%;
     background-size: cover;

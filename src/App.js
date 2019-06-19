@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Main hello='me'/>
+        <Main/>
       </div>
     )
   }
