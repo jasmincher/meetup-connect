@@ -4,13 +4,19 @@ import '../css/Home.css'
 
 
 const Home = () => (
-    <div>
-        <h4 className="home">Find meetups near you that match your interests</h4>
+
+
+
+    <div className="home">
+        <h4>Find meetups near you that match your interests</h4>
 
         <Link to="/Form">
             <button className="btn btn-primary">Lets Go</button>
         </Link>
+
     </div>
+
+
 )
 
 export default Home;

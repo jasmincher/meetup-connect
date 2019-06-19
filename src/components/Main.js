@@ -4,10 +4,19 @@ import Home from './Home';
 import Form from './Form';
 import Results from './Results';
 import Connect from './Connect';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import '../css/Main.css'
+
+
 
 
 const Main = () => (
-
+    
+    <ReactCSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+    
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Form" component={Form} />
@@ -16,6 +25,10 @@ const Main = () => (
 
 
     </Switch>
+    </ReactCSSTransitionGroup>
+
 )
+
+
 
 export default Main;
