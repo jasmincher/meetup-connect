@@ -12,24 +12,24 @@ const Form = () => (
 
             <div className="form-group">
                 <label for="input1">First Name</label>
-                <input type="text" className="form-control" id="input1" placeholder="Enter first name" />
+                <input type="text" className="form-control" id="input1" placeholder="Enter First Name" />
             </div>
 
 
             <div className="form-group">
                 <label for="input2">Last Name</label>
-                <input type="text" className="form-control" id="input2" placeholder="Enter last name" />
+                <input type="text" className="form-control" id="input2" placeholder="Enter Last Name" />
             </div>
 
 
             <div className="form-group">
                 <label for="input3">Email</label>
-                <input type="email" className="form-control" id="input3" placeholder="Enter email" />
+                <input type="email" className="form-control" id="input3" placeholder="Enter Email" />
             </div>
 
             <div className="form-group">
-                <label for="input4">Zip Code</label>
-                <input type="number" className="form-control" id="input4" placeholder="Enter Zipcode" />
+                <label for="input4">City</label>
+                <input type="text" className="form-control" id="input4" placeholder="Enter City" />
             </div>
 
 
