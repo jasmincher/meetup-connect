@@ -1,9 +1,20 @@
+
 .header{
-height: 17em;
-background-image: url('/images/women-in-tech.jpg');
-background-position: 0 35%;
-background-size: cover;
-text-align: center;
+    background-image: url('/images/women-in-tech.jpg');
+    height: 300px;
+    background-position: 0 35%;
+    background-size: cover;
 }
 
+.header-overlay{
+    background-color: rgba(0, 0, 0, 0.24);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
 
+.header-title{
+    color: white;
+}

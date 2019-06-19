@@ -5,10 +5,13 @@ import '../css/Header.css';
 
 
 const Header = () => (
+
     <div className="header">
-        <Link to="/">
-            <h1>This is Header</h1>
-        </Link>
+        <div className="header-overlay">
+            <Link to="/" style={{textDecoration: 'none'}}>
+                <h1 className="header-title">Meetup Connect</h1>
+            </Link>
+        </div>
     </div>
 )
 
