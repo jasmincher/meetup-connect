@@ -6,7 +6,6 @@ import '../css/Form.css'
 const Form = () => (
     <div className="form">
 
-
         <form>
 
 
@@ -36,7 +35,7 @@ const Form = () => (
                 <label for="input4">Interest</label>
                 <input type="text" className="form-control" id="input4" placeholder="Enter Interest" />
             </div>
-            
+
             <div className="button">
                 <Link to="/Results">
                     <button type="submit" className="btn btn-primary">Submit</button>

@@ -2,15 +2,18 @@ import React from 'react';
 import '../css/ResultsCard.css'
 
 
-function ConnectCard(props) {
+function ResultsCard(props) {
     return (
         <div className="results-card">
             
-            {/* <img src={props.img} /> */}
+            <img src={props.img} className="results-img" />
            
             <div className="details">
-                <p>{props.eventName}</p>
-                <p>{props.eventInfo}</p>
+                <h6>{props.eventName}</h6>
+                <p>{props.eventDate}</p>
+                <p>{props.eventLoc}</p>
+                <p>{props.eventPrice}</p>
+
             </div>
 
         </div>
@@ -18,4 +21,4 @@ function ConnectCard(props) {
 }
 
 
-export default ConnectCard;
+export default ResultsCard;

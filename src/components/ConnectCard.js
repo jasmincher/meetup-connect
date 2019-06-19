@@ -5,7 +5,7 @@ function ConnectCard(props) {
     return (
         <div className="connect-card">
             
-            <img src={props.img} />
+            <img src={props.img} className="person-img" />
            
             <div className="info">
                 <p>{props.name}</p>

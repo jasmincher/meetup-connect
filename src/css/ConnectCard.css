@@ -1,4 +1,22 @@
-.connect-card{
-border: black 1px solid;
-display: inline-block;
+.connect{
+    margin: 30px;
 }
+
+.connect-card{
+margin: 20px 10px 20px 10px;
+display: inline-block;
+width: 160px;
+padding: 10px;
+}
+
+.person-img{
+    width: 140px;
+}
+
+.info{
+    text-align: center;
+    line-height: 5px;
+    margin: 20px;
+    font-size: 12px;
+}
+
