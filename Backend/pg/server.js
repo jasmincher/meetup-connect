@@ -40,28 +40,23 @@ db.connect()
 //for(var i = 0; i < resizeBy.rowCount; i++){
 //console.log(res.rows[i].FirstName + " " + res.rows[i].LastName + " " + res.rows[i].interest)}
 
-
+// 192.168.43.75
 // frontend: axios.get(;='localhost:4000/getUserInfo--/)
 //Get information from a form an update database
-//const UserInfo =[];
-app.get('/UserInfo'), function(req, response) {
+//The frontend is getting info from my database
+app.get('/UserInfo', function(req, response) {
   console.log('getting a request');
   //database calls queries
-  db.query("Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"location\", \"Interest\")",
-  function (err, res, fields){
-    if(err) throw err;
-    console.log(res.rows);
-    var dataInfo =[];
-    for(i=0;i<rows.length;i++){
-      dataInfo.push(rows[i].FirstName + " " + rows[i].LastName + " "
-       + rows[i].Email + " " + rows[i].Location + " " + rows[i].Interest);
-    }
-    //respond to the request
+  db.query("Select * from \"WomenTech\"")
+  .then (res => {
+    console.log('Got the data from database');
     response.send(res.rows);
-    //res.end(JSON.stringify(datInfo));
+  })
+  .catch( err => {
+    console.log(err);
+    response.send([]);
   });
-  
-  };
+});
 
   //Post method to get info aout of database to interact with React
   app.post('/UserInfo', function(req, response){
