@@ -8,9 +8,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //Setting up the views, Configure application
-app.use(bodyParser.urlencoded({       //avtivate get for body-parser
-  extended: true
-}));
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({       //avtivate get for body-parser
+//   extended: true
+// }));
 app.use(express.static('public'));
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres WomenTech' }) //Look for a get req in the root.
@@ -46,7 +47,7 @@ db.connect()
 app.get('/UserInfo'), function(req, response) {
   console.log('getting a request');
   //database calls queries
-  db.query("Insert \"FirstName \"LastName \"Email \"location \"Interest \"INTO \"WomenTech",
+  db.query("Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"location\", \"Interest\")",
   function (err, res, fields){
     if(err) throw err;
     console.log(res.rows);
@@ -58,41 +59,44 @@ app.get('/UserInfo'), function(req, response) {
     //respond to the request
     response.send(res.rows);
     //res.end(JSON.stringify(datInfo));
-  })
+  });
   
   };
 
   //Post method to get info aout of database to interact with React
-  app.post('UserInfo', function(req, response){
-    db.query("Insert \"FirstName \"LastName \"Email \"Location \"Interest \"WomenTech",
+  app.post('/UserInfo', function(req, response){
+    // the user data
+    console.log(req.body);
+    
+  
+    db.query("Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"location\", \"Interest\")",
     function (err, res, fields){
       if(err) throw err;
       console.log(res.rows)
       var dataInfo = [];
       for(i=0;i<rows.length;i++){
-        dataInfo.push(rows[i].FirstName + " " + rows[i].LastName + " "
-        + rows[i].Email + rows[i].Location + " " + rows[i].Interest);
+        dataInfo.push(res.rows[i].FirstName + " " + res.rows[i].LastName + " "
+        + res.rows[i].Email + res.rows[i].Location + " " + res.rows[i].Interest);
       }
       //response to the request
       response.send(res.rows);
       //res.end(JSON.stringify(dataInfo));
-    })  
+  });  
+});
     
-
-  });
 
 
 //Get method to access database and return results for users with same interest(in Json)
 app.get('/search/:interest', function(req, response){
   console.log('getting a request');
-  db.query("Select * from \"WomenTech\" WHERE \"Interest\" LIKE '%React%'",
+  db.query("Select * from \"WomenTech\" WHERE \"Interest\" LIKE '%"+ req.params.interest +"%'",
     function(err, res, fields){
       if(err) throw err;
-      console.log(res.rows);
-       var data = [];
-       for(i=0;i<rows.length;i++){
-         data.push(rows[i].FirstName + " " + rows[i].LastName + " " + rows[i].Interest);
-       }
+      // console.log(res.rows);
+      //  var data = [];
+      //  for(i=0;i<res.rows.length;i++){
+      //    data.push(res.rows[i].FirstName + " " + res.rows[i].LastName + " " + res.rows[i].Interest);
+      //  }
       response.send(res.rows);
       // res.end(JSON.stringify(data));
     });
@@ -100,7 +104,7 @@ app.get('/search/:interest', function(req, response){
 
   //Post method to access database and get results for equal interest
   app.post('/search', function(req, response){ //POST method to access DB and return results in JSON
-    db.query("Select * from \" WomenTech\" WHERE\" Interest\" LIKE ' '%' + req.params.Interest + '%'",
+    db.query("Select * from \" WomenTech\" WHERE\" Interest\" LIKE ' '%" + req.params.Interest + "%'",
     function(err, rows, fields){
       if(err) throw err;
       var data = [];
@@ -113,7 +117,7 @@ app.get('/search/:interest', function(req, response){
   });
  
 
-
+//declaring the app listening port for output
   app.listen(4000, function() {
   console.log('listening on port 4000');
 })
