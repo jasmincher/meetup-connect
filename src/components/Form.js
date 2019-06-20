@@ -6,7 +6,7 @@ import '../css/Form.css'
 const Form = (props) => (
     <div className="form">
 
-        <form >
+        <form>
 
 
             <div className="form-group">
