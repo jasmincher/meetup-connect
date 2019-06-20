@@ -1,9 +1,50 @@
 .form{
     width: 300px;
-    margin: auto;
-    position: relative;
+    margin: 30px auto 30px auto;
+}
+
+.form-group{
+    height: 50px !important;
+}
+
+input{
+    border: none !important;
+    border-radius: 0 !important;
+    outline: none;
+    border-bottom: 2px rgb(131, 130, 130) solid !important;
+}
+
+input:hover{
+    background-color: rgba(0, 0, 0, 0.040);
+}
+
+input:focus, input.form-control:focus{
+    border-bottom: 2px rgb(197, 91, 165) solid !important;
+    box-shadow: none;
+}
+
+
+input:focus::placeholder{
+    opacity: 0;
+    transition: 0.2s;
+}
+
+label{
+  opacity: 0;
+  transition: 0.3s;
+}
+
+
+input:focus + label{
+   opacity: 1;
+   transform: translateY(-60px) scale(0.70);
 }
 
 .btn{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(187, 113, 165);
 }
+
+

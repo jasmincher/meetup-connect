@@ -1,0 +1,19 @@
+.results-card{
+display: inline-block;
+height: 110px;
+width: 500px;
+margin: 20px;
+font-size: 13px;
+}
+
+.results-img{
+   float: left;
+   padding-right: 10px;
+    width: 220px;
+    height: 110px;
+}
+
+.details{
+   line-height: 10px;
+  
+}
