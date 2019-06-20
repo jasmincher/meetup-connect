@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form';
+import {Redirect} from 'react-router-dom';
 import Results from './Results';
 
 class Api extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.redirect = false;
+        // x
         this.state = {
             events: [],
             found: false
@@ -32,27 +34,34 @@ class Api extends React.Component {
             console.log(resolve.data.events);
 
             console.log(resolve.data.events[0].name.text);
-            console.log(resolve.data.events[0].start.local);
+
+            // console.log(resolve.data.events[0].start.local);
             console.log(resolve.data.events[0].url);
             console.log(resolve.data.events[0].start.local);
-            console.log(resolve.data.events[0].logo.orginal.url);
+           
 
 
             this.setState({ events: resolve.data.events, found: true });
-
-        }
-        )
+        })
 
             .catch((err) => {
-                console.log("something wrong");
+                console.log(err);
+                console.log("something wrong jeff");
                 this.setState({ found: false });
             });
+
+        this.redirect = true;
 
     }
 
 
     render() {
         console.log("here first")
+        console.log(this.state)
+       // console.log(this.events)
+        if(this.redirect){
+            return <Redirect to={ {pathname:"/Results", state:{data: this.state.events}}} />
+        }
 
         return(
             <div>

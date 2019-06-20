@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../css/Form.css'
 
 
 const Form = (props) => (
     <div className="form">
 
-        <form>
+        <form >
 
 
             <div className="form-group">
@@ -38,7 +38,7 @@ const Form = (props) => (
 
             <div className="button">
                 <Link to="/Results">
-                    <button type="submit" className="btn btn-dark" onClick={props.searchEvent}>Submit</button>
+                    <button type="submit" className="btn btn-dark" onClick={props.searchEvent} >Submit</button>
                 </Link>
             </div>
 
