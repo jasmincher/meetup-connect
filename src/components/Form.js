@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../css/Form.css'
 
 
-const Form = () => (
+const Form = (props) => (
     <div className="form">
 
-        <form>
+        <form >
 
 
             <div className="form-group">
@@ -32,13 +32,13 @@ const Form = () => (
             </div>
 
             <div className="form-group">
-                <input type="text" className="form-control" id="input4" placeholder="Interest" />
+                <input type="text" className="form-control" id="input5" placeholder="Interest" />
                 <label for="input4">Interest</label>
             </div>
 
             <div className="button">
                 <Link to="/Results">
-                    <button type="submit" className="btn btn-dark">Submit</button>
+                    <button type="submit" className="btn btn-dark" onClick={props.searchEvent} >Submit</button>
                 </Link>
             </div>
 

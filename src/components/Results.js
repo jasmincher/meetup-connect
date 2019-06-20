@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import ResultsCard from './ResultsCard';
 import FullStack from '../images/fullstack.png';
 
+// class Results extends React.Component{
 
-const Results = () => (
 
-  <div className="container">
+  
+  const Results = () => (
+    
+    <div className="container">
 
     <ResultsCard img={FullStack} eventName="FullStack Cyber Bootcamp" eventDate="Mon, Sep 16, 7:00am" eventLoc="New York, NY" eventPrice="Free"/>
     
@@ -15,7 +18,7 @@ const Results = () => (
 
     <div className="home">
       <h4 className="heading">Connect to other women with the same interest near you</h4>
-      
+    
       <div className="button">
 
       <Link to="/Connect">
@@ -28,4 +31,5 @@ const Results = () => (
   </div>
 )
 
+// 
 export default Results;

@@ -6,6 +6,7 @@ import Results from './Results';
 import Connect from './Connect';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
+import Api from './Api';
 
 
 
@@ -16,13 +17,13 @@ function Main({ location }) {
         <Wrapper>
             <TransitionGroup className="transition-group">
                 <CSSTransition key={location.key}
-                    timeout={{ enter: 300, exit: 300 }}
+                    timeout={{ appear: 0, enter: 300, exit: 300 }}
                     classNames="fade"
                 >
 
                     <Switch location={location}>
                         <Route exact path="/" component={Home} />
-                        <Route path="/Form" component={Form} />
+                        <Route path="/Form" component={Api} />
                         <Route path="/Results" component={Results} />
                         <Route path="/Connect" component={Connect} />
                     </Switch>
