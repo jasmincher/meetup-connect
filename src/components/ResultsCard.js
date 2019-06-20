@@ -13,7 +13,7 @@ function ResultsCard(props) {
           
             <div className="details">
                
-                <a href={prsops.event.url}>
+                <a href={props.event.url}>
                         <h6> {props.event.name.text}</h6>
                     </a>
                     <p> {props.event.start.local}</p>
