@@ -1,22 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form';
-import { Redirect } from 'react-router-dom';
-import Results from './Results';
-
 import { Link } from 'react-router-dom';
 import ResultsCard from './ResultsCard';
-import FullStack from '../images/fullstack.png';
+import '../css/ResultsCard.css'
+
+
 
 class Api extends React.Component {
-        state = {
-            events: [],
-            found: false
-        }
-   
+    state = {
+        events: [],
+        found: false
+    }
+
 
     searchEvent = (e) => {
-        // console.log("we got here")
 
         let baseUrl = 'https://www.eventbriteapi.com/v3';
 
@@ -30,11 +28,7 @@ class Api extends React.Component {
         axios.get(baseUrl + '/events/search/?q=' + userInput1 + '&location.address=' + userInput2 + '&token=3SUYOF72RJQ2UOWNNTHD')
             .then((resolve) => {
 
-                // console.log(resolve.data.events);
-                // console.log(resolve.data.events[0].name.text);
-                // console.log(resolve.data.events[0].url);
-                // console.log(resolve.data.events[0].start.local);
-
+            
                 this.setState({ events: resolve.data.events, found: true });
             })
 
@@ -44,22 +38,17 @@ class Api extends React.Component {
                 this.setState({ found: false });
             });
 
-      
+
     }
 
     render() {
-        console.log("yerrrr");
-        console.log(this.state.events);
 
-        const resultCards =this.state.events.map(event => <ResultsCard event={event} />)
 
-        console.log(resultCards)
+        const resultCards = this.state.events.map(event => <ResultsCard event={event} />)
 
         if (this.state.found) {
-
-            // return <Redirect to={{ pathname: "/Results", state: { data: this.state.events } }} />
             return (
-               <div className = "container" >
+                <div className="container" >
                     {resultCards}
 
                     <div className="home">
@@ -74,7 +63,7 @@ class Api extends React.Component {
 
 
                     </div>
-  </div >
+                </div >
             )
         }
 

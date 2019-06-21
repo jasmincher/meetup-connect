@@ -17,7 +17,7 @@ function Main({ location }) {
         <Wrapper>
             <TransitionGroup className="transition-group">
                 <CSSTransition key={location.key}
-                    timeout={{ appear: 0, enter: 300, exit: 300 }}
+                    timeout={{ appear: 300, enter: 300, exit: 300 }}
                     classNames="fade"
                 >
 
