@@ -10,21 +10,18 @@ function ResultsCard(props) {
     var utcDate = props.event.start.utc;
     var localDate = new Date(utcDate);
 
-    
-    localDate= localDate.toLocaleString()
+
+    localDate = localDate.toLocaleString()
 
 
     if (!props.event.logo) {
         let url = placeholder;
         props.event['logo'] = {};
         props.event.logo['url'] = url;
-        
-    }
-    
-    console.log(localDate);
 
-    {/* <p> {props.event.start.utc}</p> */ }
-    
+    }
+
+    console.log(localDate);
 
     return (
         <a href={props.event.url} target="_blank">
@@ -40,7 +37,7 @@ function ResultsCard(props) {
                         <p> {props.event.name.text}</p>
 
                     </strong>
-                        <p> {localDate}</p>
+                    <p> {localDate}</p>
 
                 </div>
 

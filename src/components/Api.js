@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ResultsCard from './ResultsCard';
 import '../css/ResultsCard.css'
 
-
+const svLocation = "http://172.20.10.6:4000";
 
 class Api extends React.Component {
     state = {
@@ -14,7 +14,30 @@ class Api extends React.Component {
     }
 
 
+    formInput = (e) => {
+        let userInput1 = document.getElementById('input1').value;
+        let userInput2 = document.getElementById('input2').value;
+        let userInput3 = document.getElementById('input3').value;
+        let userInput4 = document.getElementById('input4').value;
+        let userInput5 = document.getElementById('input5').value;
+
+        let data = { firstName: userInput1, lastName: userInput2, email: userInput3, city: userInput4, interest: userInput5 }
+
+
+        axios.post(svLocation + "/UserInfo", data)
+            .then(res => {
+                console.log(res)
+                console.log("worked yay")
+            })
+    }
+
+
+
+
     searchEvent = (e) => {
+        this.formInput();
+
+
 
         let baseUrl = 'https://www.eventbriteapi.com/v3';
 
@@ -28,7 +51,7 @@ class Api extends React.Component {
         axios.get(baseUrl + '/events/search/?q=' + userInput1 + '&location.address=' + userInput2 + '&token=3SUYOF72RJQ2UOWNNTHD')
             .then((resolve) => {
 
-            
+
                 this.setState({ events: resolve.data.events, found: true });
             })
 

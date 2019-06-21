@@ -1,18 +1,57 @@
 import React from 'react';
 import ConnectCard from './ConnectCard';
 import Woman from '../images/placeholder-woman.jpg'
+import axios from 'axios';
 
 
-const Connect = () => (
-    <div className="connect">
 
-<ConnectCard img={Woman} name="Jane Doe" email="j.doe@gmail.com"/>
+
+const svLocation = "http://172.20.10.6:4000";
+
+
+class Connect extends React.Component {
+
+
+    state = {
+        dat: []
+    }
+
+componentDidMount(){
+    this.something();
+
+}
+
+
+
+    something =()=> {
+    axios.get(svLocation + "/UserInfo")
+        .then(res => {
+            console.log(res)
+            console.log("i got something")
+        this.setState ({
+            dat:res.data
+        })
+
+        
+
+        })
+    }
     
-<ConnectCard img={Woman} name="Jane Doe" email="j.doe@gmail.com"/>
+        render() {
+           const contact = this.state.dat.map(co => <ConnectCard co={co} />)
+            console.log(contact)
+            
+        
+    return (
 
-<ConnectCard img={Woman} name="Jane Doe" email="j.doe@gmail.com"/>
+        <div className="connect">
 
-    </div>
-)
+        {contact}
+         
+
+        </div>
+    )
+        }
+}
 
 export default Connect;

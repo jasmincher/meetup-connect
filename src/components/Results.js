@@ -6,9 +6,6 @@ import APi from './Api';
 
 
 
-// console.log(this.props.location.state.events[0]+" it workedddddddddd")
-
-
 
 const Results = () => (
 
@@ -24,7 +21,7 @@ const Results = () => (
 
       <div className="button">
 
-        <Link to="/Connect">
+        <Link to={"/Connect" + document.getElementById("input5")}>
           <button className="btn btn-dark">Lets Go</button>
         </Link>
       </div>
