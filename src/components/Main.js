@@ -12,26 +12,31 @@ import Api from './Api';
 
 function Main({ location }) {
 
-    return (
+  return (
 
-        <Wrapper>
-            <TransitionGroup className="transition-group">
-                <CSSTransition key={location.key}
-                    timeout={{ appear: 300, enter: 300, exit: 300 }}
-                    classNames="fade"
-                >
+    <Wrapper>
+      <TransitionGroup className="transition-group">
+        <CSSTransition key={location.key}
+          timeout={{ enter: 300, exit: 300 }}
+          classNames="fade"
+        >
+          <section className="route-section">
 
-                    <Switch location={location}>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/Form" component={Api} />
-                        <Route path="/Results" component={Results} />
-                        <Route path="/Connect" component={Connect} />
-                    </Switch>
-                </CSSTransition>
-            </TransitionGroup>
-        </Wrapper>
 
-    )
+            <Switch location={location}>
+              <Route exact path="/" component={Home} />
+              <Route path="/Form" component={Api} />
+              <Route path="/Results" component={Results} />
+              <Route path="/Connect" component={Connect} />
+            </Switch>
+
+          </section>
+
+        </CSSTransition>
+      </TransitionGroup>
+    </Wrapper>
+
+  )
 }
 
 const Wrapper = styled.div`
