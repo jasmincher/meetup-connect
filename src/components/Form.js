@@ -22,7 +22,7 @@ const Form = (props) => (
 
 
             <div className="form-group">
-                <input type="email" className="form-control" id="input3" placeholder="Email" />
+                <input type="email" className="form-control" id="input3" placeholder="Email"/>
                 <label for="input3">Email</label>
             </div>
 
