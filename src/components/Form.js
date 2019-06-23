@@ -4,6 +4,8 @@ import '../css/Form.css'
 
 
 const Form = (props) => (
+
+    
     <div className="form">
 
         <form>
@@ -22,7 +24,7 @@ const Form = (props) => (
 
 
             <div className="form-group">
-                <input type="email" className="form-control" id="input3" placeholder="Email" />
+                <input type="email" className="form-control" id="input3" placeholder="Email"/>
                 <label for="input3">Email</label>
             </div>
 
@@ -37,7 +39,7 @@ const Form = (props) => (
             </div>
 
             <div className="button">
-                <Link to="/Results">
+                <Link to={"/Connect"}>
                     <button type="submit" className="btn btn-dark" onClick={props.searchEvent} >Submit</button>
                 </Link>
             </div>

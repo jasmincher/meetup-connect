@@ -27,7 +27,7 @@ function Main({ location }) {
               <Route exact path="/" component={Home} />
               <Route path="/Form" component={Api} />
               <Route path="/Results" component={Results} />
-              <Route path="/Connect" component={Connect} />
+              <Route path="/Connect/:interest" component={Connect} />
             </Switch>
 
           </section>

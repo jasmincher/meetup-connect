@@ -1,19 +1,23 @@
 .results-card{
-display: inline-block;
 height: 110px;
-width: 500px;
-margin: 20px;
+width: 70%;
+margin: 60px auto 0 auto;
 font-size: 13px;
+color: black;
 }
 
 .results-img{
    float: left;
    padding-right: 10px;
-    width: 220px;
-    height: 110px;
+   width: 220px;
+   height: 110px;
+    
 }
 
 .details{
-   line-height: 10px;
-  
+   line-height: 18px;
+}
+
+a:hover{
+   text-decoration: none;
 }

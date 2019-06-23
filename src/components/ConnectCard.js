@@ -1,16 +1,18 @@
 import React from 'react';
 import '../css/ConnectCard.css';
+import Woman from '../images/placeholder-woman.jpg'
+
 
 
 function ConnectCard(props) {
     return (
         <div className="connect-card">
             
-            <img src={props.img} className="person-img" />
+            <img src={Woman} className="person-img" />
            
             <div className="info">
-                <p>{props.name}</p>
-                <p>{props.email}</p>
+                <p>{props.co.FirstName} {props.co.LastName}</p>
+                <p>{props.co.Email}</p>
             </div>
 
         </div>
