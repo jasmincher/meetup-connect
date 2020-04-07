@@ -1,5 +1,5 @@
 const bodyParser = require('body-parser') // turns response into usable format
-//const cors = require('cors')  // allows/disallows cross-site communication
+const cors = require('cors')  // allows/disallows cross-site communication
 //const morgan = require('morgan') // logs requests
 const pg = require('pg');
 const express = require('express');
@@ -8,12 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //Setting up the views, Configure application
+app.use(cors());
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({       //avtivate get for body-parser
 //   extended: true
 // }));
 app.use(express.static('public'));
+
 app.get('/', (request, response) => {
+  console.log('it worked');
   response.json({ info: 'Node.js, Express, and Postgres WomenTech' }) //Look for a get req in the root.
 });
 
@@ -40,44 +43,47 @@ db.connect()
 //for(var i = 0; i < resizeBy.rowCount; i++){
 //console.log(res.rows[i].FirstName + " " + res.rows[i].LastName + " " + res.rows[i].interest)}
 
-
+// 192.168.43.75
 // frontend: axios.get(;='localhost:4000/getUserInfo--/)
 //Get information from a form an update database
-//const UserInfo =[];
-app.get('/UserInfo'), function(req, response) {
+//The frontend is getting info from my database
+app.get('/UserInfo', function(req, response) {
   console.log('getting a request');
   //database calls queries
-  db.query("Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"location\", \"Interest\")",
-  function (err, res, fields){
-    if(err) throw err;
-    console.log(res.rows);
-    var dataInfo =[];
-    for(i=0;i<rows.length;i++){
-      dataInfo.push(rows[i].FirstName + " " + rows[i].LastName + " "
-       + rows[i].Email + " " + rows[i].Location + " " + rows[i].Interest);
-    }
-    //respond to the request
+  db.query("Select * from \"WomenTech\"")
+  .then (res => {
+    console.log('Got the data from database');
     response.send(res.rows);
-    //res.end(JSON.stringify(datInfo));
+  })
+  .catch( err => {
+    console.log(err);
+    response.send([]);
   });
-  
-  };
+});
 
-  //Post method to get info aout of database to interact with React
+  //Post method to get info out of database to interact with React
+  //Take the form info into my db
   app.post('/UserInfo', function(req, response){
     // the user data
     console.log(req.body);
     
-  
-    db.query("Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"location\", \"Interest\")",
+    let queryStr = "Insert INTO \"WomenTech\" (\"FirstName\", \"LastName\", \"Email\", \"Location\", \"Interest\")";
+    queryStr += "VALUES ($1, $2, $3, $4, $5)";
+    let {firstName, lastName, email, city, interest} = req.body;
+
+    db.query(queryStr, [firstName, lastName, email, city, interest],
     function (err, res, fields){
-      if(err) throw err;
-      console.log(res.rows)
-      var dataInfo = [];
-      for(i=0;i<rows.length;i++){
-        dataInfo.push(res.rows[i].FirstName + " " + res.rows[i].LastName + " "
-        + res.rows[i].Email + res.rows[i].Location + " " + res.rows[i].Interest);
-      }
+      if(err) {
+        response.send('we crashed!');
+        throw err
+      };
+
+      // console.log(res.rows)
+      // var dataInfo = [];
+      // for(i=0;i<rows.length;i++){
+      //   dataInfo.push(res.rows[i].FirstName + " " + res.rows[i].LastName + " "
+      //   + res.rows[i].Email + res.rows[i].Location + " " + res.rows[i].Interest);
+      // }
       //response to the request
       response.send(res.rows);
       //res.end(JSON.stringify(dataInfo));
