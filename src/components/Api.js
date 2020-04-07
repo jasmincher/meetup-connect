@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import ResultsCard from './ResultsCard';
 import '../css/ResultsCard.css'
 
-const svLocation = "http://172.20.10.6:4000";
+const svLocation = "http://10.4.22.237:4000";
 
 class Api extends React.Component {
     state = {
         events: [],
-        found: false
+        found: false,
+        lastInterestEnter: 'react'
     }
 
 
@@ -52,7 +53,7 @@ class Api extends React.Component {
             .then((resolve) => {
 
 
-                this.setState({ events: resolve.data.events, found: true });
+                this.setState({ events: resolve.data.events, found: true, lastInterestEnter: userInput1 });
             })
 
             .catch((err) => {
@@ -68,6 +69,7 @@ class Api extends React.Component {
 
 
         const resultCards = this.state.events.map(event => <ResultsCard event={event} />)
+        const button = ';'; 
 
         if (this.state.found) {
             return (
@@ -79,7 +81,7 @@ class Api extends React.Component {
 
                         <div className="button">
 
-                            <Link to="/Connect">
+                            <Link to={"/Connect/"+this.state.lastInterestEnter}>
                                 <button className="btn btn-dark">Lets Go</button>
                             </Link>
                         </div>

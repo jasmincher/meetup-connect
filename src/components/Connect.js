@@ -4,9 +4,7 @@ import Woman from '../images/placeholder-woman.jpg'
 import axios from 'axios';
 
 
-
-
-const svLocation = "http://172.20.10.6:4000";
+const svLocation = "http://10.4.22.237:4000";
 
 
 class Connect extends React.Component {
@@ -22,12 +20,14 @@ componentDidMount(){
 }
 
 
-
     something =()=> {
     axios.get(svLocation + "/UserInfo")
         .then(res => {
             console.log(res)
             console.log("i got something")
+
+            
+
         this.setState ({
             dat:res.data
         })

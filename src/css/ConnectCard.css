@@ -1,5 +1,6 @@
 .connect{
     margin: 30px;
+    text-align:center;
 }
 
 .connect-card{
@@ -7,6 +8,9 @@ margin: 20px 10px 20px 10px;
 display: inline-block;
 width: 160px;
 padding: 10px;
+height: 236px;
+overflow: hidden;
+
 }
 
 .person-img{
@@ -18,5 +22,7 @@ padding: 10px;
     line-height: 5px;
     margin: 20px;
     font-size: 12px;
+    width: 100px;
+   
 }
 
